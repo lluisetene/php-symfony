@@ -1,0 +1,15 @@
+{% extends 'layouts/master.html.twig' %}
+
+{% block titulo %} Animales {% endblock %}
+
+{% block cabecera %}
+    {{ parent() }}
+    <h1>Animales (cabecera)</h1>
+{% endblock %}
+
+{% block contenido %}
+    {# Comentarios #}
+    <h1>{{ title }}</h1>
+    <h2>Tu nombre es {{ nombre }}</h2>
+    <h2>Tus apellidos son {{ apellidos }}</h2>
+{% endblock %}

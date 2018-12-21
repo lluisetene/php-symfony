@@ -1,0 +1,27 @@
+<!DOCTYPE HTML>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block titulo %} Inicio (por defecto){% endblock %} - PHP en Symfony</title>
+    </head>
+    <body>
+        <div id="header">
+            {% block cabecera %}
+                <h1>Cabecera de la plantilla (por defecto)</h1>
+            {% endblock %}
+            <hr>
+        </div>
+
+        <section id="content">
+            {% block contenido %}
+                <p>Contenido (por defecto)</p>
+            {% endblock %}
+        </section>
+
+        <footer>
+            <hr>
+            Lluís Nebot Español
+        </footer>
+    </body>
+
+</html>
