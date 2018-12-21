@@ -46,3 +46,13 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# OS X
+.DS_Store
+.Spotlight-V100
+.Trashes
+._*
