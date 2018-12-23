@@ -4,13 +4,64 @@
 
 {% block cabecera %}
     {{ parent() }}
-    <h1>Animales (cabecera)</h1>
+    <h2>{{ title }}</h2>
 {% endblock %}
 
 {% block contenido %}
     {# Comentarios #}
-    <h1>{{ title }}</h1>
+    {#<h1>{{ title }}</h1>
     <h2>Tu nombre es {{ nombre }}</h2>
     <h2>Tus apellidos son {{ apellidos }}</h2>
-    <h3>Probando.... pene</h3>
+    <h3>Probando.... pene</h3>#}
+
+    {# Crear variable #}
+    {% set perro = 'Pastor Alemán' %}
+    <h4>{{ perro }}</h4>
+
+    {# Trabajar con arrays #}
+    {{ dump(animales) }}
+    {{ animales[1] }}
+
+    {# Arrays asociativos #}
+    {{ dump(aves) }}
+    {{ aves.tipo ~ ' - ' ~ aves.raza }} {# ~ option + ñ (Mac) #}
+
+    {# Condicionales #}
+    {% if aves.tipo == 'palomo' %}
+        <h1>Cuidado, un palomo volador</h1>
+    {% else %}
+        <h1>No hay palomos a la vista</h1>
+    {% endif %}
+
+    {# Bucle #}
+    {% if animales|length > 0 %}
+        <ul>
+            {% for animal in animales %}
+                <li>{{ animal }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+    <hr>
+
+    {% for i in 0..animales|length %}
+        {{ i }}<br/>
+    {% endfor %}
+    <hr>
+
+    {% if aves.color starts with 'g' %}
+        <h1>Empieza por 'g'</h1>
+    {#
+    {% if aves.color ends with 's' %}
+        <h1>Termina con 's'</h1>
+    #}
+    {% else %}
+        <h1>No funciona 'starts/ends with'</h1>
+    {% endif %}
+    <hr>
+
+    {{ include('partials/funciones.html.twig', {'nombre': 'Lluís'}) }}
+
+
+
+
 {% endblock %}

@@ -1,0 +1,30 @@
+<h2>Funciones predefinidas</h2>
+
+<h3>{{ nombre }}</h3>
+
+{# Funciones predefinidas #}
+    {{ min([9,11,6,99,2]) }} <br/>
+{{ max([9,11,6,99,2]) }} <br/>
+{{ dump(animales) }}
+{{ random(animales) }} <br/>
+
+<hr>
+
+{% for i in range(0, 100, 5) %}
+    {{ i }}<br/>
+{% endfor %}
+
+<h1>Filtros</h1>
+{{ animales|length }}
+
+{% set mail = ' email@email.com   ' %}
+{{ dump(mail) }}
+{{ dump(mail|trim|upper|lower) }}
+
+<h1>Extensiones personalizadas</h1>
+{# Como función #}
+{# El filtro raw es para imprimir el html #}
+{{ multiplicar(5)|raw }}
+
+{# Como filtro -> MiFiltroExtension.php:getFilters() #}
+{{ 12|multiplicar|raw }}
